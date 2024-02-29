@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Form Tavolo</h2>
+    <div class="form">
+        <div class="form-group">
+            <label for="id">ID:</label>
+
+            <input type="number" name="id" id="id" min="1"
+            [(ngModel)]="id">
+        </div>
+
+        <div class="form-group">
+            <label for="posti">Posti:</label>
+            <input type="number" name="posti" id="posti" min="1"
+            [(ngModel)]="posti">
+        </div>
+        
+        <div class="form-group">
+            <label for="isRotondo">Rotondo:</label>
+            <input type="checkbox" name="isRotondo" 
+            id="isRotondo" [(ngModel)]="isRotondo">
+        </div>
+
+        <div class="form-group">
+            <label for="isRiservato">Riservato:</label>
+            <input type="checkbox" name="isRiservato" 
+            id="isRiservato" [(ngModel)]="isRiservato">
+        </div>
+        <button (click)="addTavolo()">Aggiungi Tavolo</button>
+        <button (click)="resetForm()">Reset</button>
+    </div>
+</div>
+
