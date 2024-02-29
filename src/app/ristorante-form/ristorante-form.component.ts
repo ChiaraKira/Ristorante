@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Tavolo } from '../model/tavolo';
+import { TavoloService } from '../service/tavolo.service';
 
 @Component({
   selector: 'app-ristorante-form',
@@ -8,28 +9,21 @@ import { Tavolo } from '../model/tavolo';
 })
 export class RistoranteFormComponent {
 
-  id = 0;
+
   posti = 0;
   isRotondo = false;
-  isRiservato = false;
+
  
-  @Output() tavoloAdded = new EventEmitter<Tavolo>()
+  // @Output() tavoloAdded = new EventEmitter<Tavolo>()
+
+  constructor(private tavoloService : TavoloService){}
  
    addTavolo(){
-     const newTavolo : Tavolo = {
-       id: this.id,
-       posti: this.posti,
-       isRotondo: this.isRotondo,
-       isRiservato:this.isRiservato
-     }
- 
-     this.tavoloAdded.next(newTavolo);
+    this.tavoloService.aggiungiTavolo(this.posti,this.isRotondo);
    }
 
    resetForm(){
-    this.id = 0;
     this.posti = 0;
     this.isRotondo = false;
-    this.isRiservato = false;
    }
 }

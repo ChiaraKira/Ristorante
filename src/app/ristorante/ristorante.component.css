@@ -1,0 +1,23 @@
+body{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 20px;
+}
+
+app-ristorante-form{
+   background-color: #AAC4FF;
+   padding: 20px;
+   text-align: center;
+   width: 40vh;
+   border-radius: 15px;
+}
+
+app-ristorante-list{
+    background-color: #AAC4FF;
+    padding: 20px;
+    width: 40vh;
+    border-radius: 15px;
+}
+
